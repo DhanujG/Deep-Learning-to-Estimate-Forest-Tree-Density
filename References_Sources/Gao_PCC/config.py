@@ -2,6 +2,7 @@ import os
 from easydict import EasyDict as edict
 import time
 import torch
+import os
 
 # init
 __C = edict()
@@ -13,9 +14,14 @@ __C.VAL = edict()
 __C.VIS = edict()
 
 #------------------------------DATA------------------------
+
+input_direc = os.getcwd()
 __C.DATA.STD_SIZE = (576,768)
 #__C.DATA.DATA_PATH = '/media/D/DataSet/CC/' +str(__C.DATA.STD_SIZE[0]) + 'x' + str(__C.DATA.STD_SIZE[1]) + '/shanghaitech_part_B'                  
-__C.DATA.DATA_PATH = '/content/drive/My Drive/442_PCNN/data/shanghaitech_part_B'                  
+#__C.DATA.DATA_PATH = '/Users/dhanu/Documents/DhanujG/Projects/Deep_Learning_to_Estimate_Forest_Tree_Density/References_Sources/Gao_PCC/datasets/shanghaiTechB.py'                  
+#__C.DATA.DATA_PATH = '/mnt/c/Users/dhanu/Documents/DhanujG/Projects/Deep_Learning_to_Estimate_Forest_Tree_Density/References_Sources/Gao_PCC/data/shanghaitech_part_B'                 
+#__C.DATA.DATA_PATH = "/Users/dhanu/Documents/DhanujG/Projects/Deep_Learning_to_Estimate_Forest_Tree_Density/Gao_PCC/data/shanghaitech_part_B"                 
+__C.DATA.DATA_PATH = input_direc + "/data/shanghaitech_part_B"                 
 
 __C.DATA.MEAN_STD = ([0.444637000561], [0.226200059056]) # part B
 __C.DATA.DEN_ENLARGE = 1.
